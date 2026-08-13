@@ -120,4 +120,4 @@ async function loadNews(){
   box.innerHTML=Object.keys(grouped).map(cat=>`<div class="card"><h3>${cat}</h3>${grouped[cat].slice(0,8).map(it=>`<div class="news-item"><div><span class="pill gold">${it.source}</span>${it.matches.map(m=>`<span class="pill green">${m}</span>`).join('')}</div><a href="${it.link}" target="_blank">${it.title}</a><div class="muted">${it.date}</div><p>${it.desc}</p>${it.matches[0]?`<button class="btn secondary" onclick="viewPlayerFromNews('${encodeURIComponent(it.matches[0])}')">View player on Big Board</button>`:''}</div>`).join('')}</div>`).join('')||(selected==='All News'?'<p class="muted">No news items found.</p>':`<p class="muted">No ${selected} items found in the latest feed batch.</p>`);
 }
 function init(){navInit();initFilters();loadBoard();renderHome();renderKeepers();renderCapital();renderDraft();renderPlayers();countdown();setInterval(countdown,60000)}init();
-</script></body></html>
+<script src="roster_doctor_addon.js"></script></body></html>
